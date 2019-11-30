@@ -116,6 +116,7 @@ class Product
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Brand")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"product:read"})
      */
     private $brand;
 
@@ -132,6 +133,7 @@ class Product
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"product:read"})
      */
     private $category;
 
@@ -143,6 +145,7 @@ class Product
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Color")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"product:read"})
      */
     private $color;
 
@@ -359,12 +362,6 @@ class Product
     public function getBrandName(): ?string
     {
         return $this->brand->getName();
-    }
-
-    public function setBrandName($brandName): self
-    {
-        $this->brandName = $brandName;
-        return $this;
     }
 
     public function getBrandLogo(): ?string
