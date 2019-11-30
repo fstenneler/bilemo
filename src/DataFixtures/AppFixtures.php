@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 use App\Entity\Brand;
 use App\Entity\Color;
+use App\Entity\Media;
 use App\Entity\Product;
 use App\Entity\Category;
 use Symfony\Component\Yaml\Yaml;
@@ -24,7 +25,7 @@ class AppFixtures extends Fixture
         $this->loadCategories($manager, 'src/DataFixtures/Data/category.yaml');
         $this->loadColors($manager, 'src/DataFixtures/Data/color.yaml');
         $this->loadProducts($manager, 'src/DataFixtures/Data/product.yaml');
-        //$this->loadMedias($manager, 'src/DataFixtures/Data/media.yaml');
+        $this->loadMedias($manager, 'src/DataFixtures/Data/media.yaml');
     }
 
     /**
@@ -140,10 +141,10 @@ class AppFixtures extends Fixture
     {
         $fixtureData = Yaml::parseFile($dataPath);
 
-        foreach($fixtureData as $trickData) {
-            foreach($trickData['media'] as $url) {
+        foreach($fixtureData as $mediaData) {
+            foreach($mediaData['media'] as $url) {
                 $media = new Media();
-                $media->setTrick($this->getReference('[trick] ' . $trickData['trickName']));
+                $media->setProduct($this->getReference('[product] ' . $mediaData['productName']));
                 $media->setUrl($url);
                 $manager->persist($media);
             }

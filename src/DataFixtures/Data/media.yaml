@@ -1,99 +1,70 @@
 -
-  trickName : Melon grab
+  productName : iPhone 11 Pro Max
   media:
-    - melon-grab-1.jpg
-    - melon-grab-2.jpg
-    - melon-grab-3.jpeg
-    - melon-grab-4.jpg
-    - https://www.youtube.com/embed/OMxJRz06Ujc
-    - https://www.youtube.com/embed/ONzaNuNrsjA
+    - iphone-11-pro-1.jpg
+    - iphone-11-pro-2.jpg
+    - iphone-11-pro-3.jpeg
+    - iphone-11-pro-4.jpg
 -
-  trickName : Bloody Dracula
+  productName : Galaxy A10e
   media:
-    - bloody-dracula-1.jpg
-    - bloody-dracula-2.jpg
-    - bloody-dracula-3.jpg
-    - bloody-dracula-4.jpg
-    - https://www.youtube.com/embed/UU9iKINvlyU
-    - https://www.youtube.com/embed/GOQDkRYXL0o
+    - galaxy-a10e-1.jpg
+    - galaxy-a10e-2.jpg
+    - galaxy-a10e-3.jpg
+    - galaxy-a10e-4.jpg
 -
-  trickName : Suitcase grab
+  productName : iPhone XR
   media:
-    - suitcase-grab-1.jpg
-    - suitcase-grab-2.jpg
-    - suitcase-grab-3.jpg
-    - suitcase-grab-4.jpg
-    - https://www.youtube.com/embed/JLo63PnCzW4
-    - https://www.youtube.com/embed/V7TND7v5Tak
+    - iphone-xr-1.jpg
+    - iphone-xr-2.jpg
+    - iphone-xr-3.jpg
+    - iphone-xr-4.jpg
 -
-  trickName : Rodeo
+  productName : Galaxy S10e
   media:
-    - rodeo-1.jpg
-    - rodeo-2.jpg
-    - rodeo-3.jpg
-    - rodeo-4.jpg
-    - https://www.youtube.com/embed/vf9Z05XY79A
-    - https://www.youtube.com/embed/AepLCXn30Ww
+    - galaxy-s10e-1.jpg
+    - galaxy-s10e-2.jpg
+    - galaxy-s10e-3.jpg
+    - galaxy-s10e-4.jpg
 -
-  trickName : Cork
+  productName : Galaxy Note10+
   media:
-    - cork-1.jpg
-    - cork-2.jpg
-    - cork-3.jpg
-    - cork-4.jpg
-    - https://www.youtube.com/embed/FMHiSF0rHF8
-    - https://www.youtube.com/embed/P5ZI-d-eHsI
+    - galaxy-note10-1.jpg
+    - galaxy-note10-2.jpg
+    - galaxy-note10-3.jpg
+    - galaxy-note10-4.jpg
 -
-  trickName : Misty
+  productName : G8X ThinQ
   media:
-    - misty-1.jpg
-    - misty-2.jpg
-    - misty-3.jpg
-    - misty-4.jpg
-    - https://www.youtube.com/embed/HEzgU_A16Gs
-    - https://www.youtube.com/embed/r_WR-4a_gy4
+    - g8x-thinq-1.jpg
+    - g8x-thinq-2.jpg
+    - g8x-thinq-3.jpg
+    - g8x-thinq-4.jpg
 -
-  trickName : Eggplant
+  productName : K40
   media:
-    - eggplant-1.jpg
-    - eggplant-2.jpg
-    - eggplant-3.jpg
-    - eggplant-4.jpg
-    - https://www.youtube.com/embed/46-Twiz43N8
-    - https://www.youtube.com/embed/2iS21nuz03Y
+    - k40-1.jpg
+    - k40-2.jpg
+    - k40-3.jpg
+    - k40-4.jpg
 -
-  trickName : Miller flip
+  productName : DuraForce PRO 2
   media:
-    - miller-flip-1.jpg
-    - miller-flip-2.jpg
-    - miller-flip-3.jpg
-    - miller-flip-4.jpg
-    - https://www.youtube.com/embed/Gc7PU9Y9DMg
-    - https://www.youtube.com/embed/jXiv_z6kOJI
+    - duraforce-pro-2-1.jpg
+    - duraforce-pro-2-2.jpg
+    - duraforce-pro-2-3.jpg
+    - duraforce-pro-2-4.jpg
 -
-  trickName : Andrecht
+  productName : moto z4
   media:
-    - andrecht-1.jpg
-    - andrecht-2.jpg
-    - andrecht-3.jpg
-    - andrecht-4.jpg
-    - https://www.youtube.com/embed/y2ieye2Fn8k
-    - https://www.youtube.com/embed/2iS21nuz03Y
+    - moto-z4-1.jpg
+    - moto-z4-2.jpg
+    - moto-z4-3.jpg
+    - moto-z4-4.jpg
 -
-  trickName : Boardslide
+  productName : 3 V
   media:
-    - boardslide-1.jpeg
-    - boardslide-2.jpeg
-    - boardslide-3.jpeg
-    - boardslide-4.jpg
-    - https://www.youtube.com/embed/NWkXQy91jbw
-    - https://www.youtube.com/embed/R3OG9rNDIcs
--
-  trickName : Lipslide
-  media:
-    - lipslide-1.jpg
-    - lipslide-2.jpg
-    - lipslide-3.jpg
-    - lipslide-4.jpg
-    - https://www.youtube.com/embed/pwTTTz0G4oA
-    - https://www.youtube.com/embed/LSVn5aI56aU
+    - 3v-1.jpeg
+    - 3v-2.jpeg
+    - 3v-3.jpeg
+    - 3v-4.jpg
