@@ -4,9 +4,18 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups": {"brand:read"}},
+ *     collectionOperations={
+ *         "get"
+ *     },
+ *     itemOperations={
+ *         "get"
+ *     }
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\BrandRepository")
  */
 class Brand
@@ -20,11 +29,13 @@ class Brand
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Groups("brand:read")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("brand:read")
      */
     private $logo;
 

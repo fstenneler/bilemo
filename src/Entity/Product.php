@@ -2,13 +2,22 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups": {"product:read"}},
+ *     collectionOperations={
+ *         "get"
+ *     },
+ *     itemOperations={
+ *         "get"
+ *     }
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  */
 class Product
@@ -21,71 +30,85 @@ class Product
     private $id;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100)
      */
     private $sku;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=14, nullable=true)
      */
     private $gencode;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="float")
      */
     private $publicPrice;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="float")
      */
     private $price;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="integer")
      */
     private $stock;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $dimensions;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $weight;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $os;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $display;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $processor;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $camera;
 
     /**
+     * @Groups({"product:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $sensors;
@@ -97,10 +120,25 @@ class Product
     private $brand;
 
     /**
+     * @Groups({"product:read"})
+     */
+    private $brandName;
+
+    /**
+     * @Groups({"product:read"})
+     */
+    private $brandLogo;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @Groups({"product:read"})
+     */
+    private $categoryName;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Color")
@@ -109,9 +147,24 @@ class Product
     private $color;
 
     /**
+     * @Groups({"product:read"})
+     */
+    private $colorName;
+
+    /**
+     * @Groups({"product:read"})
+     */
+    private $colorHexa;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="product", orphanRemoval=true)
      */
     private $media;
+
+    /**
+     * @Groups({"product:read"})
+     */
+    private $mediaUrl;
 
     public function __construct()
     {
@@ -303,6 +356,16 @@ class Product
         return $this;
     }
 
+    public function getBrandName(): ?string
+    {
+        return $this->brand->getName();
+    }
+
+    public function getBrandLogo(): ?string
+    {
+        return $this->brand->getLogo();
+    }
+
     public function getCategory(): ?Category
     {
         return $this->category;
@@ -313,6 +376,11 @@ class Product
         $this->category = $category;
 
         return $this;
+    }
+
+    public function getCategoryName(): ?string
+    {
+        return $this->category->getName();
     }
 
     public function getColor(): ?Color
@@ -327,12 +395,31 @@ class Product
         return $this;
     }
 
+    public function getColorName(): ?string
+    {
+        return $this->color->getName();
+    }
+
+    public function getColorHexa(): ?string
+    {
+        return $this->color->getHexa();
+    }
+
     /**
      * @return Collection|Media[]
      */
     public function getMedia(): Collection
     {
         return $this->media;
+    }
+
+    public function getMediaUrl(): ?array
+    {   
+        $mediaUrl = [];
+        foreach($this->media as $media) {
+            $mediaUrl[] = $media->getUrl();
+        }
+        return $mediaUrl;
     }
 
     public function addMedium(Media $medium): self
