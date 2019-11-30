@@ -28,7 +28,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $reference;
+    private $sku;
 
     /**
      * @ORM\Column(type="string", length=14, nullable=true)
@@ -68,11 +68,6 @@ class Product
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $memory;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
     private $os;
 
     /**
@@ -83,7 +78,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $battery;
+    private $processor;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
@@ -94,16 +89,6 @@ class Product
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $sensors;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
-    private $connectivity;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
-    private $bandQuad;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Brand")

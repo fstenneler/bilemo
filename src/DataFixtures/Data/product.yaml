@@ -1,0 +1,21 @@
+-
+    brandName : Apple
+    categoryName : Unlocked phones
+    colorName : Gray
+    name: iPhone 11 Pro Max
+    reference: MWL12LL/A
+    gencode: 190199380226
+    description: "Shoot amazing videos and photos with the Ultra Wide, Wide, and Telephoto cameras. Capture your best low-light photos with Night mode. Watch HDR movies and shows on the 6.5-inch Super Retina XDR display—the brightest iPhone display yet. Experience unprecedented performance with A13 Bionic for gaming, augmented reality (AR), and photography. And get all-day battery life and a new level of water resistance. All in the first iPhone powerful enough to be called Pro. Check it out."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "0.32 x 6.22 x 3.06 inches"
+    weight: "7.97 Ounces"
+    memory: "256GB"
+    os: "iOS 13"
+    display: "Super Retina XDR display"
+    battery: "Lasts up to 5 hours longer than iPhone XS Max"
+    camera: "2MP TrueDepth front camera"
+    sensors: "Face ID, barometer, three-axis gyro, accelerometer, proximity, ambient light"
+    connectivity: "802.11ax Wi‑Fi 6 with 2x2 MIMO, Bluetooth v5.0"
+    bandQuad: "850, 900, 1800, 1900 MHz"

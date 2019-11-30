@@ -1,0 +1,51 @@
+-
+  name : Black
+  hexa: "#000000"
+-
+  name : Gold
+  hexa: "#ffd700"
+-
+  name : Silver
+  hexa: "#aaa9ad"
+-
+  name : Gray
+  hexa: "#808080"
+-
+  name : White
+  hexa: "#FFFFFF"
+-
+  name : Red
+  hexa: "#ff0000"
+-
+  name : Blue
+  hexa: "#0000ff"
+-
+  name : Pink
+  hexa: "#ff69b4"
+-
+  name : Green
+  hexa: "#00ff00"
+-
+  name : Orange
+  hexa: "#FFA500"
+-
+  name : Yellow
+  hexa: "#ffff00"
+-
+  name : Brown
+  hexa: "#654321"
+-
+  name : Purple
+  hexa: "#800080"
+-
+  name : Beige
+  hexa: "#f5f5dc"
+-
+  name : Clear
+  hexa: "#dcf0ef"
+-
+  name : Multicolor
+  hexa: 
+-
+  name : Other
+  hexa: 
