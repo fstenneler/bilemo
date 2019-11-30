@@ -135,14 +135,14 @@ class Product
         return $this;
     }
 
-    public function getReference(): ?string
+    public function getSku(): ?string
     {
-        return $this->reference;
+        return $this->sku;
     }
 
-    public function setReference(string $reference): self
+    public function setSku(string $sku): self
     {
-        $this->reference = $reference;
+        $this->sku = $sku;
 
         return $this;
     }
@@ -231,18 +231,6 @@ class Product
         return $this;
     }
 
-    public function getMemory(): ?string
-    {
-        return $this->memory;
-    }
-
-    public function setMemory(?string $memory): self
-    {
-        $this->memory = $memory;
-
-        return $this;
-    }
-
     public function getOs(): ?string
     {
         return $this->os;
@@ -267,14 +255,14 @@ class Product
         return $this;
     }
 
-    public function getBattery(): ?string
+    public function getProcessor(): ?string
     {
-        return $this->battery;
+        return $this->processor;
     }
 
-    public function setBattery(?string $battery): self
+    public function setProcessor(?string $processor): self
     {
-        $this->battery = $battery;
+        $this->processor = $processor;
 
         return $this;
     }
@@ -299,30 +287,6 @@ class Product
     public function setSensors(?string $sensors): self
     {
         $this->sensors = $sensors;
-
-        return $this;
-    }
-
-    public function getConnectivity(): ?string
-    {
-        return $this->connectivity;
-    }
-
-    public function setConnectivity(?string $connectivity): self
-    {
-        $this->connectivity = $connectivity;
-
-        return $this;
-    }
-
-    public function getBandQuad(): ?string
-    {
-        return $this->bandQuad;
-    }
-
-    public function setBandQuad(?string $bandQuad): self
-    {
-        $this->bandQuad = $bandQuad;
 
         return $this;
     }

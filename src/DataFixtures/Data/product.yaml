@@ -3,7 +3,7 @@
     categoryName : Unlocked phones
     colorName : Gray
     name: iPhone 11 Pro Max
-    reference: MWL12LL/A
+    sku: 6589B
     gencode: 190199380226
     description: "Shoot amazing videos and photos with the Ultra Wide, Wide, and Telephoto cameras. Capture your best low-light photos with Night mode. Watch HDR movies and shows on the 6.5-inch Super Retina XDR display—the brightest iPhone display yet. Experience unprecedented performance with A13 Bionic for gaming, augmented reality (AR), and photography. And get all-day battery life and a new level of water resistance. All in the first iPhone powerful enough to be called Pro. Check it out."
     public_price: 1313.49
@@ -11,11 +11,170 @@
     stock: 10
     dimensions: "0.32 x 6.22 x 3.06 inches"
     weight: "7.97 Ounces"
-    memory: "256GB"
     os: "iOS 13"
     display: "Super Retina XDR display"
-    battery: "Lasts up to 5 hours longer than iPhone XS Max"
-    camera: "2MP TrueDepth front camera"
+    processor: "A13 Bionic chip"
+    camera: "12MP TrueDepth front camera"
     sensors: "Face ID, barometer, three-axis gyro, accelerometer, proximity, ambient light"
-    connectivity: "802.11ax Wi‑Fi 6 with 2x2 MIMO, Bluetooth v5.0"
-    bandQuad: "850, 900, 1800, 1900 MHz"
+-
+    brandName : Samsung
+    categoryName : Unlocked phones
+    colorName : Black
+    name: Galaxy A10e
+    sku: 6995B
+    gencode: 887276339887
+    description: "With the Samsung Galaxy A10e, you get exactly what you need with the performance and reliability from a brand you can trust. Do more with a long-lasting battery,1 keep everything you want with a 32GB built-in memory, and experience it on a 5.83” edge-to-edge Infinity Display2. Finally, the Samsung Galaxy A10e is the phone you need to keep connected with friends and family - and at just the right price."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "5.80 x 2.74 x 0.33 inches"
+    weight: "5.93 Ounces"
+    os: "Android 9 (Pie)"
+    display: "5.83-inches"
+    processor: "Octa-core, 2 @ 1.6GHz, 6 @ 1.35GHz"
+    camera: "8MP rear camera, 5MP front"
+    sensors: "Accelerometer"
+-
+    brandName : Apple
+    categoryName : Phones with plans
+    colorName : Blue
+    name: iPhone XR
+    sku: 6589B
+    gencode: 190198778383
+    description: "iPhone XR features a 6.1-inch Liquid Retina display.1 Six stunning colors. Advanced Face ID lets you securely unlock your iPhone and log in to apps with just a glance. The A12 Bionic chip uses real-time machine learning to transform the way you experience photos, gaming, augmented reality (AR), and more. A 12MP camera system with Portrait mode, Portrait Lighting, enhanced bokeh, and Depth Control for studio-quality portraits. And a water-resistant design."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "5.94 x 2.98 x 0.33 inches"
+    weight: "6.84 Ounces"
+    os: "iOS 12"
+    display: "6.1-inch (diagonal) all-screen LCD Multi-Touch display with IPS technology"
+    processor: "A12 Bionic chip with next-generation Neural Engine"
+    camera: "12MP rear camera, 7MP front"
+    sensors: "Face ID, barometer, three-axis gyro, accelerometer, proximity, ambient light"
+-
+    brandName : Samsung
+    categoryName : Unlocked phones
+    colorName : Pink
+    name: Galaxy S10e
+    sku: 6833B
+    gencode: 887276300658
+    description: "Experience the next generation of Galaxy with the Samsung Galaxy S10e. With an intelligent battery, an all-new camera with ultra-wide field of view, Wireless PowerShare, and a large, immersive Infinity Display, you wont miss a beat."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "5.6 x 2.75 x 0.31 inches"
+    weight: "5.29 Ounces"
+    os: "Android 9 (Pie)"
+    display: "5.8-inch Dynamic AMOLED Infinity Display with Corning® Gorilla® Glass 6"
+    processor: "Octa-core, 1 at 2.8GHz, 3 at 2.4GHz, 4 at 1.7GHz"
+    camera: "Pro-grade Camera"
+    sensors: "Accelerometer, ambient light, barometer, gyroscope"
+-
+    brandName : Samsung
+    categoryName : Unlocked phones
+    colorName : White
+    name: Galaxy Note10+
+    sku: 6045C
+    gencode: 887276356761
+    description: "Next-generation achievers, power up with the Samsung Galaxy Note10+. Get the intelligent all-day battery, for power that keeps up with you. Charge in minutes with the Superfast Charge, for hours of power. Maximize your video watching experience with the powerfully designed, immersive, nearly bezel-less Infinity display. Power your productivity and take notes, edit videos, or control the Galaxy Note10 | Note10+, now with wireless interaction using remote gestures and the S Pen. Create powerful images, capturing magnificent photos and videos easily, then using the S Pen to edit and enhance them with precision."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "6.38 x 3.03 x 0.31 inches"
+    weight: "6.91 Ounces"
+    os: "Android 9 (Pie)"
+    display: "6.8-inch Dynamic AMOLED with Corning® Gorilla® Glass 6"
+    processor: "Octa-core, 1 at 2.8GHz, 3 at 2.4GHz, 4 at 1.7GHz"
+    camera: "Pro-grade Camera"
+    sensors: "Accelerometer, ambient light, barometer, gyroscope"
+-
+    brandName : LG
+    categoryName : Unlocked phones
+    colorName : Black
+    name: G8X ThinQ
+    sku: 6102C
+    gencode: 652810833653
+    description: "The LG G8X ThinQTM and LG Dual Screen (sold separately) doubles your screen real estate giving you the ability to do multiple things at once. Run multiple apps at once to discover entirely new and seamless ways to watch, share, and shop. Turn one screen into a control pad to gain an edge over other gamers. Or, use that screen as a viewfinder to breathe new life into your photography. With so many to multi-task, LG G8X ThinQTM and LG Dual Screen (sold separately) will transform your mobile experience."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "6.27 x 3.00 x 0.33 inches"
+    weight: "6.77 Ounces"
+    os: "Android 9 (Pie)"
+    display: "6.4"
+    processor: "Qualcomm® Snapdragon™ 855"
+    camera: "12 MP & 13 MP rear-facing cameras"
+    sensors: "Accelerometer, Gyroscope, Ambient Light, Fingerprint, Proximity, eCompass, Barometer"
+-
+    brandName : LG
+    categoryName : Phones with plans
+    colorName : Black
+    name: K40
+    sku: 6011C
+    gencode: 652810833080
+    description: "LG K40TM is excellence made affordable. The 5.7-inch HD+ FullVision display provides vibrant viewing of pictures, videos, web content and more. And the feature-rich 13MP AF rear and 5MP front cameras will capture your favorite memories."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "6.02 x 2.83 x 0.32 inches"
+    weight: "5.11 Ounces"
+    os: "Android 9 (Pie)"
+    display: "5.7 inches"
+    processor: "Coretex A53"
+    camera: "13 MP rear camera, 5 MP front"
+    sensors: "Accelerometer, Gyroscope, Ambient Light, Proximity, Fingerprint"
+-
+    brandName : Kyocera
+    categoryName : Unlocked phones
+    colorName : Black
+    name: DuraForce PRO 2
+    sku: 6758B
+    gencode: 67215026898
+    description: "The KYOCERA DuraForce PRO 2 is the durable and dependable smartphone that works as hard as you do. Hold crisp, clear conversations using 4-mic noise cancellation technology and 106dB+ dual front speakers. Snap photos - even underwater* - with 13 MP rear-facing, 5 MP front-facing and super wide-view 4k cameras. And defend your device from scratches with the ultra-tough, Verizon-exclusive Sapphire Shield Display. The KYOCERA DuraForce PRO 2 is dustproof, waterproof* and meets military-grade protection standards. Unleash its full potential with consistently fast speeds from Verizon, America's largest and most reliable 4G LTE network."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "5.91 x 2.89 x 0.54 inches"
+    weight: "8.29 Ounces"
+    os: "Android 8.1 (Oreo™)"
+    display: "5.0-inch display with Dragontrail™ PRO glass"
+    processor: "Qualcomm® Snapdragon™ 630"
+    camera: "Super-wide view 4K action camera"
+    sensors: "Accelerometer, barometer, gyroscope"
+-
+    brandName : Motorola
+    categoryName : Unlocked phones
+    colorName : Black
+    name: moto z4
+    sku: MOTXT19804W
+    gencode: 67215026898
+    description: "Say hello to the moto z4, Motorola's newest 5G-upgradable smartphone.¹ Snap unforgettable photos on a 48 MP camera sensor - their biggest yet.² Then switch to the 25 MP selfie camera with special features like background blur and AI-based beautification. The moto z4 features an edge-to-edge Max Vision OLED display, 3.5 mm headphone jack, integrated fingerprint reader and 3600 mAh battery for up to 2 days of use time per charge.³ Unleash its full potential with Verizon, America's most awarded network."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "6.22 x 2.95 x 0.29 inches"
+    weight: "5.82 Ounces"
+    os: "Android 9 (Pie)"
+    display: "6.4-inch glass OLED capacitive touchscreen with micro-notch"
+    processor: "Octa-core 2.0 GHz, Qualcomm® Snapdragon™ 675"
+    camera: "48 MP"
+    sensors: "Accelerometer, barometer, gyroscope"
+-
+    brandName : Nokia
+    categoryName : Phones with plans
+    colorName : Red
+    name: 3 V
+    sku: 719901073231
+    gencode: 67215026898
+    description: "Efficiency meets elegance with the Nokia 3 V. This slim and sophisticated smartphone features an eye-catching high-gloss design, 2.5D glass display and 6.26-inch HD+ screen complete with a selfie notch for maximized viewing area. Get more done thanks to a high-performance Snapdragon 429 Processor and long-lasting 4,000 mAh battery.1 Verizon is your go-to destination for the hottest phones like the Nokia 3 V, all on the nation's most awarded network."
+    public_price: 1313.49
+    price: 1206.30
+    stock: 10
+    dimensions: "6.28 x 3 x 0.33 inches"
+    weight: "6.17 Ounces"
+    os: "Android 9 (Pie)"
+    display: "6.26-inch HD+ display (720 x 1440); 257ppi; 2.5D glass"
+    processor: "Qualcomm® Snapdragon™ 429"
+    camera: "13 MP"
+    sensors: "Accelerometer, barometer, gyroscope"

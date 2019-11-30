@@ -109,7 +109,7 @@ class AppFixtures extends Fixture
             $product->setCategory($this->getReference('[category] ' . $productData['categoryName']));
             $product->setColor($this->getReference('[color] ' . $productData['colorName']));
             $product->setName($productData['name']);
-            $product->setReference($productData['reference']);
+            $product->setSku($productData['sku']);
             $product->setGencode($productData['gencode']);
             $product->setDescription($productData['description']);
             $product->setPublicPrice($productData['public_price']);
@@ -117,14 +117,11 @@ class AppFixtures extends Fixture
             $product->setStock($productData['stock']);
             $product->setDimensions($productData['dimensions']);
             $product->setWeight($productData['weight']);
-            $product->setMemory($productData['memory']);
             $product->setOs($productData['os']);
             $product->setDisplay($productData['display']);
-            $product->setBattery($productData['battery']);
+            $product->setProcessor($productData['processor']);
             $product->setCamera($productData['camera']);
             $product->setSensors($productData['sensors']);
-            $product->setConnectivity($productData['connectivity']);
-            $product->setBandQuad($productData['bandQuad']);
             $manager->persist($product);
             $this->addReference('[product] ' . $productData['name'], $product);
         }
