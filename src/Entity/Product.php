@@ -358,7 +358,13 @@ class Product
 
     public function getBrandName(): ?string
     {
-        return $this->brandName = $this->brand->getName();
+        return $this->brand->getName();
+    }
+
+    public function setBrandName($brandName): self
+    {
+        $this->brandName = $brandName;
+        return $this;
     }
 
     public function getBrandLogo(): ?string
