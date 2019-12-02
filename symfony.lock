@@ -113,6 +113,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "justinrainbow/json-schema": {
+        "version": "5.2.9"
+    },
     "nelmio/cors-bundle": {
         "version": "1.5",
         "recipe": {
@@ -133,6 +136,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.3"
+    },
+    "php": {
+        "version": "7.2"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.0.0"
@@ -157,6 +163,9 @@
     },
     "symfony/asset": {
         "version": "v4.3.8"
+    },
+    "symfony/browser-kit": {
+        "version": "v4.3.9"
     },
     "symfony/cache": {
         "version": "v4.3.8"
@@ -188,6 +197,9 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v4.3.8"
+    },
+    "symfony/dom-crawler": {
+        "version": "v4.3.9"
     },
     "symfony/dotenv": {
         "version": "v4.3.8"
@@ -238,6 +250,12 @@
             "./src/Kernel.php"
         ]
     },
+    "symfony/http-client": {
+        "version": "v4.3.9"
+    },
+    "symfony/http-client-contracts": {
+        "version": "v1.1.8"
+    },
     "symfony/http-foundation": {
         "version": "v4.3.8"
     },
@@ -258,6 +276,22 @@
     },
     "symfony/mime": {
         "version": "v4.3.8"
+    },
+    "symfony/phpunit-bridge": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "b0582341f1df39aaf3a9a866cdbe49937da35984"
+        },
+        "files": [
+            "./.env.test",
+            "./bin/phpunit",
+            "./config/bootstrap.php",
+            "./phpunit.xml.dist",
+            "./tests/.gitignore"
+        ]
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.13.0"
