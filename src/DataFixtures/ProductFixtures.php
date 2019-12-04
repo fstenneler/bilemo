@@ -10,7 +10,7 @@ use Symfony\Component\Yaml\Yaml;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class AppFixtures extends Fixture
+class ProductFixtures extends Fixture
 {
 
     /**
