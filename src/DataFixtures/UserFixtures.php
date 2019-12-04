@@ -53,7 +53,7 @@ class UserFixtures extends Fixture
         for ($i = 0; $i < 5; $i++) {
             $user = new User();
             $user->setUsername($faker->userName);
-            $user->setPassword($this->passwordEncoder->encodePassword($user, $faker->password)); 
+            $user->setPassword($this->passwordEncoder->encodePassword($user, 'user')); 
             $user->setRoles(['ROLE_USER']);       
             $user->setCompany($faker->company);
             $user->setManagerName($faker->name);
