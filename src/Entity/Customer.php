@@ -13,8 +13,9 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"customer:read"}},
- *     denormalizationContext={"groups"={"customer:write"}}
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     normalizationContext={"groups"={"user:read"}},
+ *     denormalizationContext={"groups"={"user:write"}},
  * )
  * @ORM\Entity(repositoryClass="App\Repository\CustomerRepository")
  */
@@ -28,55 +29,65 @@ class Customer implements UserInterface
     private $id;
 
     /**
-     * @Groups({"customer:read", "customer:write"})
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\Email
-     * @Assert\Unique
      * @Assert\NotBlank
+     * @Assert\Email(
+     *     message = "Wrong value for the given mail address"
+     * )
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 180,
+     *      minMessage = "The email address must be at least {{ limit }} characters long",
+     *      maxMessage = "The email address cannot be longer than {{ limit }} characters"
+     * )
      */
     private $email;
 
     /**
-     * @Groups({"customer:read", "customer:write"})
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=255)
-     * @SecurityAssert\UserPassword
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "The password must be at least {{ limit }} characters long",
+     *      maxMessage = "The password cannot be longer than {{ limit }} characters"
+     * )
      */
     private $password;
 
     /**
-     * @Groups({"customer:read", "customer:write"})
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="datetime", nullable=true)
-     * @Assert\Type(type="string")
-     * @Assert\NotBlank
+     * @Assert\DateTime(
+     *     message = "Wrong value for the given birthday date. Only datetime formats are accepted"
+     * )
      */
     private $birthday;
 
     /**
-     * @Groups({"customer:read", "customer:write"})
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 5,
+     *      minMessage = "The phone must be at least {{ limit }} characters long"
+     * )
      */
     private $phone;
 
     /**
-     * @Groups({"customer:read", "customer:write"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime
-     * @Assert\NotBlank
      */
     private $createdAt;
 
     /**
+     * @Groups({"user:read"})
      * @ORM\OneToMany(targetEntity="App\Entity\CustomerAddress", mappedBy="customer", orphanRemoval=true)
      */
     private $customerAddresses;
-
-    /**
-     * @Groups({"customer:read"})
-     */
-    private $customerAddressesCollection;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")

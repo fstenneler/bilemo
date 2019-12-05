@@ -10,13 +10,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups": {"product:read"}},
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     normalizationContext={"groups": {"user:read"}},
  *     collectionOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
+ *         "get"
  *     },
  *     itemOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
- *     }
+ *         "get"
+ *     },
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  */
@@ -30,85 +31,85 @@ class Product
     private $id;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100)
      */
     private $sku;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=14, nullable=true)
      */
     private $gencode;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="float")
      */
     private $publicPrice;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="float")
      */
     private $price;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="integer")
      */
     private $stock;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $dimensions;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $weight;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $os;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $display;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $processor;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $camera;
 
     /**
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $sensors;
@@ -116,58 +117,29 @@ class Product
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Brand")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      */
     private $brand;
 
     /**
-     * @Groups({"product:read"})
-     */
-    private $brandName;
-
-    /**
-     * @Groups({"product:read"})
-     */
-    private $brandLogo;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      */
     private $category;
 
     /**
-     * @Groups({"product:read"})
-     */
-    private $categoryName;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Color")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"product:read"})
+     * @Groups({"user:read"})
      */
     private $color;
 
     /**
-     * @Groups({"product:read"})
-     */
-    private $colorName;
-
-    /**
-     * @Groups({"product:read"})
-     */
-    private $colorHexa;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="product", orphanRemoval=true)
+     * @Groups({"user:read"})
      */
     private $media;
-
-    /**
-     * @Groups({"product:read"})
-     */
-    private $mediaUrl;
 
     public function __construct()
     {
@@ -359,16 +331,6 @@ class Product
         return $this;
     }
 
-    public function getBrandName(): ?string
-    {
-        return $this->brand->getName();
-    }
-
-    public function getBrandLogo(): ?string
-    {
-        return $this->brand->getLogo();
-    }
-
     public function getCategory(): ?Category
     {
         return $this->category;
@@ -379,11 +341,6 @@ class Product
         $this->category = $category;
 
         return $this;
-    }
-
-    public function getCategoryName(): ?string
-    {
-        return $this->category->getName();
     }
 
     public function getColor(): ?Color
@@ -398,31 +355,12 @@ class Product
         return $this;
     }
 
-    public function getColorName(): ?string
-    {
-        return $this->color->getName();
-    }
-
-    public function getColorHexa(): ?string
-    {
-        return $this->color->getHexa();
-    }
-
     /**
      * @return Collection|Media[]
      */
     public function getMedia(): Collection
     {
         return $this->media;
-    }
-
-    public function getMediaUrl(): ?array
-    {   
-        $mediaUrl = [];
-        foreach($this->media as $media) {
-            $mediaUrl[] = $media->getUrl();
-        }
-        return $mediaUrl;
     }
 
     public function addMedium(Media $medium): self

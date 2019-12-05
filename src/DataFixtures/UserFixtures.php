@@ -42,9 +42,10 @@ class UserFixtures extends Fixture
     private function loadUsers(ObjectManager $manager)
     {
         
+        // create an admin user
         $user = new User();
         $user->setUsername('admin');
-        $user->setPassword($this->passwordEncoder->encodePassword($user, 'admin')); 
+        $user->setPassword($this->passwordEncoder->encodePassword($user, 'admin'));
         $user->setRoles(['ROLE_ADMIN']);       
         $user->setCompany('Bilemo');
         $user->setManagerName('Fabien Stenneler');
@@ -52,10 +53,14 @@ class UserFixtures extends Fixture
         $user->setManagerPhone('+33612345678');
         $manager->persist($user);
         
+        // initiate the faker bundle
         $faker = Faker\Factory::create('en_US');
 
+        // create 5 users
         for ($i = 0; $i < 5; $i++) {
+
             $user = new User();
+
             $user->setUsername($faker->userName);
             $user->setPassword($this->passwordEncoder->encodePassword($user, 'user')); 
             $user->setRoles(['ROLE_USER']);       
@@ -63,8 +68,10 @@ class UserFixtures extends Fixture
             $user->setManagerName($faker->name);
             $user->setManagerEmail($faker->companyEmail);
             $user->setManagerPhone($faker->phoneNumber);
+
             $manager->persist($user);
             $this->addReference('[user] ' . $i, $user);
+
         }
 
         $manager->flush();
@@ -81,14 +88,18 @@ class UserFixtures extends Fixture
     private function loadCustomers(ObjectManager $manager)
     {
         
+        // initiate the faker bundle
         $faker = Faker\Factory::create('en_US');
 
+        // create 30 customers
         for ($i = 0; $i < 30; $i++) {
 
+            // generate random values for user id and if birthday is defined
             $userId = rand(0, 4);
             $isBirthdayDefined = rand(0, 1);
 
             $customer = new Customer();
+
             $customer->setEmail($faker->email);
             $customer->setPassword($this->passwordEncoder->encodePassword($customer, $faker->password));
             if($isBirthdayDefined === 1) {
@@ -97,8 +108,9 @@ class UserFixtures extends Fixture
             $customer->setPhone($faker->phoneNumber);
             $customer->setCreatedAt($faker->dateTimeThisYear($max = 'now', $timezone = null));
             $customer->setUser($this->getReference('[user] ' . $userId));
-            $manager->persist($customer);
-           $this->addReference('[customer] ' . $i, $customer);
+
+            $manager->persist($customer);            
+            $this->addReference('[customer] ' . $i, $customer);
 
         }
 
@@ -116,19 +128,23 @@ class UserFixtures extends Fixture
     private function loadCustomerAddresses(ObjectManager $manager)
     {
         
+        // initiate the faker bundle
         $faker = Faker\Factory::create('en_US');
 
-        for ($iCustomer = 0; $iCustomer < 10; $iCustomer++) {
+        // for the 30 created customers, create a random number of addresses
+        for ($iCustomer = 0; $iCustomer < 30; $iCustomer++) {
 
+            // generate random values for the number of addresses and which address is default
             $numberOfAddress = rand(1, 5);
             $defaultAddress = rand(1, $numberOfAddress);
 
             for($iAddress = 1; $iAddress <= $numberOfAddress; $iAddress++) {
-    
-                $address = new CustomerAddress();
 
+                // generate random values to fix if the current address is business and if there is an addressLine2 value
                 $isBusiness = rand(0,1);
                 $hasSecondaryAddress = rand(0,1);
+    
+                $address = new CustomerAddress();
                 
                 $address->setFirstName($faker->firstName());
                 $address->setLastName($faker->lastName());
@@ -148,6 +164,7 @@ class UserFixtures extends Fixture
                     $address->setDefault(false);
                 }
                 $address->setCustomer($this->getReference('[customer] ' . $iCustomer));
+                
                 $manager->persist($address);
 
             }

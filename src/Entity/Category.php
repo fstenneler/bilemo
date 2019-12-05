@@ -8,14 +8,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups": {"category:read"}},
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     normalizationContext={"groups": {"user:read"}},
  *     collectionOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
+ *         "get"
  *     },
  *     itemOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
- *     }
- * )
+ *         "get"
+ *     },
  * )
  * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
  */
@@ -30,7 +30,7 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Groups("category:read")
+     * @Groups("user:read")
      */
     private $name;
 

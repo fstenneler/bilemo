@@ -2,10 +2,21 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     normalizationContext={"groups": {"user:read"}},
+ *     collectionOperations={
+ *         "get"
+ *     },
+ *     itemOperations={
+ *         "get"
+ *     },
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\MediaRepository")
  */
 class Media
@@ -18,6 +29,7 @@ class Media
     private $id;
 
     /**
+     * @Groups({"user:read"})
      * @ORM\Column(type="string", length=255)
      */
     private $url;

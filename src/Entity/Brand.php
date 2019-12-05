@@ -8,13 +8,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
+ *     attributes={"security"="is_granted('ROLE_USER')"},
  *     normalizationContext={"groups": {"brand:read"}},
  *     collectionOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
+ *         "get"
  *     },
  *     itemOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
- *     }
+ *         "get"
+ *     },
  * )
  * @ORM\Entity(repositoryClass="App\Repository\BrandRepository")
  */

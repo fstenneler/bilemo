@@ -8,14 +8,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups": {"color:read"}},
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     normalizationContext={"groups": {"user:read"}},
  *     collectionOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
+ *         "get"
  *     },
  *     itemOperations={
- *         "get"={"security"="is_granted('ROLE_USER')"}
- *     }
- * )
+ *         "get"
+ *     },
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ColorRepository")
  */
@@ -30,13 +30,13 @@ class Color
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Groups("color:read")
+     * @Groups("user:read")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=7, nullable=true)
-     * @Groups("color:read")
+     * @Groups("user:read")
      */
     private $hexa;
 

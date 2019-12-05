@@ -4,10 +4,18 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     normalizationContext={"groups"={"user:read"}},
+ *     denormalizationContext={"groups"={"user:write"}},
+ *     collectionOperations={
+ *         "post"
+ *     },
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\CustomerAddressRepository")
  */
 class CustomerAddress
@@ -20,73 +28,117 @@ class CustomerAddress
     private $id;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=100)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 100,
+     *      maxMessage = "The first name cannot be longer than {{ limit }} characters"
+     * )
      */
     private $firstName;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=100)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 100,
+     *      maxMessage = "The last name cannot be longer than {{ limit }} characters"
+     * )
      */
     private $lastName;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=100, nullable=true)
-     * @Assert\Type(type="string")
+     * @Assert\Length(
+     *      max = 100,
+     *      maxMessage = "The business name cannot be longer than {{ limit }} characters"
+     * )
      */
     private $business;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=255)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "The line 1 of address cannot be longer than {{ limit }} characters"
+     * )
      */
     private $addressLine1;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Type(type="string")
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "The line 2 of address cannot be longer than {{ limit }} characters"
+     * )
      */
     private $addressLine2;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=10)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 10,
+     *      maxMessage = "The postal code cannot be longer than {{ limit }} characters"
+     * )
      */
     private $postalCode;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=100)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 100,
+     *      maxMessage = "The city cannot be longer than {{ limit }} characters"
+     * )
      */
     private $city;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="string", length=100)
-     * @Assert\Type(type="string")
      * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 100,
+     *      maxMessage = "The country cannot be longer than {{ limit }} characters"
+     * )
      */
     private $country;
 
     /**
+     * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="boolean")
-     * @Assert\Type(type="boolean")
-     * @Assert\NotBlank
+     * @Assert\Type(
+     *     type = "boolean",
+     *     message = "This value should be of type {{ type }}"
+     * )
      */
     private $isDefault;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Customer", inversedBy="customerAddresses")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\Type(type="integer")
-     * @Assert\NotBlank
      */
     private $customer;
+
+    /**
+     * @Groups({"user:write"})
+     * @Assert\Type(
+     *     type = "integer",
+     *     message = "This value should be of type {{ type }}"
+     * )
+     * @Assert\NotBlank
+     */
+    private $customerId;
 
     public function getId(): ?int
     {
@@ -212,4 +264,17 @@ class CustomerAddress
 
         return $this;
     }
+
+    public function getCustomerId(): ?int
+    {
+        return $this->customerId;
+    }
+
+    public function setCustomerId(int $customerId): self
+    {
+        $this->customerId = $customerId;
+
+        return $this;
+    }
+
 }
