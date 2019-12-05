@@ -27,7 +27,7 @@ class CustomerDataPersister implements DataPersisterInterface
     }
 
     public function persist($customer)
-    { echo "oui"; die();
+    {
 
         // get the current authenticated user
         $token = $this->tokenStorage->getToken();
