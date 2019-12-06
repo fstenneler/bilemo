@@ -22,7 +22,7 @@ class UserRepository extends ServiceEntityRepository
     /**
      * @return User[] Returns an array of User objects
      */    
-    public function findFirstUser($role)
+    public function findFirstBy($role)
     {
         $result = $this->createQueryBuilder('u')
             ->andWhere('u.roles LIKE :role')
@@ -34,17 +34,23 @@ class UserRepository extends ServiceEntityRepository
         ;
         return $result[0];
     }
-    
 
-    /*
-    public function findOneBySomeField($value): ?User
+    /**
+     * @return User[] Returns an array of User objects
+     */    
+    public function findAnotherOne($role, $userId)
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
+        $result = $this->createQueryBuilder('u')
+            ->andWhere('u.roles LIKE :role')
+            ->andWhere('u.id != :id')
+            ->setParameter('role', '%' . $role . '%')
+            ->setParameter('id', $userId)
+            ->orderBy('u.id', 'ASC')
+            ->setMaxResults(1)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
+        return $result[0];
     }
-    */
+
 }

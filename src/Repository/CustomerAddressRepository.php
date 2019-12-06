@@ -19,32 +19,22 @@ class CustomerAddressRepository extends ServiceEntityRepository
         parent::__construct($registry, CustomerAddress::class);
     }
 
-    // /**
-    //  * @return CustomerAddress[] Returns an array of CustomerAddress objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return CustomerAddress[] Returns an array of CustomerAddress objects
+     */    
+    public function findFirstIdBy($user)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $result = $this->createQueryBuilder('ca')
+        ->andWhere('c.user = :user')
+        ->setParameter('user', $user)
+        ->leftJoin('ca.customer', 'c')
+        ->orderBy('ca.id', 'ASC')
+        ->getQuery()
+        ->getResult();
+        if(count($result) > 0) {
+            return $result[0]->getId();
+        }
+        return 0;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?CustomerAddress
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

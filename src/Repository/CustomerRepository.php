@@ -19,32 +19,46 @@ class CustomerRepository extends ServiceEntityRepository
         parent::__construct($registry, Customer::class);
     }
 
-    // /**
-    //  * @return Customer[] Returns an array of Customer objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Customer[] Returns an array of Customer objects
+     */    
+    public function findFirstIdBy($user)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+        $result = $this->createQueryBuilder('c')
+            ->andWhere('c.user = :user')
+            ->setParameter('user', $user)
             ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult()
         ;
+        if(count($result) > 0) {
+            return $result[0]->getId();
+        }
+        return 0;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Customer
+    /**
+     * @return Customer[] Returns an array of Customer objects
+     */    
+    public function findIdByUser($user, $maxResults)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $result = $this->createQueryBuilder('c')
+        ->andWhere('c.user = :user')
+        ->setParameter('user', $user)
+        ->orderBy('c.id', 'ASC')
+        ->setMaxResults($maxResults)
+        ->getQuery()
+        ->getResult()
+    ;
+
+    $customersId = array();
+    if(count($result) > 0) {
+        foreach($result as $value) {
+            $customersId[] = $value->getId();
+        }
     }
-    */
+    return $customersId;
+}
+
 }

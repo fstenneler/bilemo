@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b574471ef96dbd0fefbe49e8027b8bb5",
+    "content-hash": "08c1a83b3ef71817923a46369108bfce",
     "packages": [
         {
             "name": "api-platform/api-pack",
@@ -1710,6 +1710,77 @@
             "time": "2019-11-22T14:22:26+00:00"
         },
         {
+            "name": "liip/test-fixtures-bundle",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liip/LiipTestFixturesBundle.git",
+                "reference": "8bcf792fcc0d3f790fd48141df5991be1cf35932"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liip/LiipTestFixturesBundle/zipball/8bcf792fcc0d3f790fd48141df5991be1cf35932",
+                "reference": "8bcf792fcc0d3f790fd48141df5991be1cf35932",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.0",
+                "php": "^7.1",
+                "symfony/framework-bundle": "^3.4 || ^4.1 || ^5.0"
+            },
+            "require-dev": {
+                "doctrine/data-fixtures": "^1.3",
+                "doctrine/doctrine-bundle": "^1.8 | ^2.0",
+                "doctrine/doctrine-fixtures-bundle": "^3.0.2",
+                "doctrine/orm": "^2.6",
+                "monolog/monolog": "~1.11 | ^2.0",
+                "phpunit/phpunit": "^7.5 || ^8.0",
+                "symfony/monolog-bridge": ">=3",
+                "symfony/monolog-bundle": "^3.2",
+                "symfony/phpunit-bridge": "^3.4 || ^4.1 || ^5.0",
+                "theofidry/alice-data-fixtures": "^1.0.1"
+            },
+            "suggest": {
+                "doctrine/dbal": "Required when using the fixture loading functionality with an ORM and SQLite",
+                "doctrine/doctrine-fixtures-bundle": "Required when using the fixture loading functionality",
+                "doctrine/orm": "Required when using the fixture loading functionality with an ORM and SQLite",
+                "hautelook/alice-bundle": "Required when using loadFixtureFiles functionality with custom providers",
+                "theofidry/alice-data-fixtures": "Required when using loadFixtureFiles functionality"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liip\\TestFixturesBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Liip AG",
+                    "homepage": "http://www.liip.ch/"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/liip/LiipTestFixturesBundle/contributors"
+                }
+            ],
+            "description": "This bundles enables efficient loading of Doctrine fixtures in functional test-cases for Symfony applications",
+            "keywords": [
+                "fixtures",
+                "symfony",
+                "testing"
+            ],
+            "time": "2019-12-02T16:06:04+00:00"
+        },
+        {
             "name": "namshi/jose",
             "version": "7.2.3",
             "source": {
@@ -3347,6 +3418,126 @@
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
             "time": "2019-11-28T11:39:15+00:00"
+        },
+        {
+            "name": "symfony/http-client",
+            "version": "v4.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client.git",
+                "reference": "8d25d5816b33c7c5cde0d557af31c924e68d4fb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/8d25d5816b33c7c5cde0d557af31c924e68d4fb9",
+                "reference": "8d25d5816b33c7c5cde0d557af31c924e68d4fb9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "psr/log": "^1.0",
+                "symfony/http-client-contracts": "^1.1.7",
+                "symfony/polyfill-php73": "^1.11",
+                "symfony/service-contracts": "^1.0|^2"
+            },
+            "provide": {
+                "psr/http-client-implementation": "1.0",
+                "symfony/http-client-implementation": "1.1"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.0",
+                "psr/http-client": "^1.0",
+                "symfony/http-kernel": "^4.3",
+                "symfony/process": "^4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpClient\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpClient component",
+            "homepage": "https://symfony.com",
+            "time": "2019-11-28T14:09:27+00:00"
+        },
+        {
+            "name": "symfony/http-client-contracts",
+            "version": "v1.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client-contracts.git",
+                "reference": "088bae75cfa2ec5eb6d33dce17dbd8613150ce6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client-contracts/zipball/088bae75cfa2ec5eb6d33dce17dbd8613150ce6e",
+                "reference": "088bae75cfa2ec5eb6d33dce17dbd8613150ce6e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "suggest": {
+                "symfony/http-client-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\HttpClient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to HTTP clients",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2019-11-07T12:44:51+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -5838,126 +6029,6 @@
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
             "time": "2019-10-28T17:07:32+00:00"
-        },
-        {
-            "name": "symfony/http-client",
-            "version": "v4.3.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/http-client.git",
-                "reference": "8d25d5816b33c7c5cde0d557af31c924e68d4fb9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/8d25d5816b33c7c5cde0d557af31c924e68d4fb9",
-                "reference": "8d25d5816b33c7c5cde0d557af31c924e68d4fb9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "psr/log": "^1.0",
-                "symfony/http-client-contracts": "^1.1.7",
-                "symfony/polyfill-php73": "^1.11",
-                "symfony/service-contracts": "^1.0|^2"
-            },
-            "provide": {
-                "psr/http-client-implementation": "1.0",
-                "symfony/http-client-implementation": "1.1"
-            },
-            "require-dev": {
-                "nyholm/psr7": "^1.0",
-                "psr/http-client": "^1.0",
-                "symfony/http-kernel": "^4.3",
-                "symfony/process": "^4.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\HttpClient\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony HttpClient component",
-            "homepage": "https://symfony.com",
-            "time": "2019-11-28T14:09:27+00:00"
-        },
-        {
-            "name": "symfony/http-client-contracts",
-            "version": "v1.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/http-client-contracts.git",
-                "reference": "088bae75cfa2ec5eb6d33dce17dbd8613150ce6e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client-contracts/zipball/088bae75cfa2ec5eb6d33dce17dbd8613150ce6e",
-                "reference": "088bae75cfa2ec5eb6d33dce17dbd8613150ce6e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3"
-            },
-            "suggest": {
-                "symfony/http-client-implementation": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Contracts\\HttpClient\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Generic abstractions related to HTTP clients",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "abstractions",
-                "contracts",
-                "decoupling",
-                "interfaces",
-                "interoperability",
-                "standards"
-            ],
-            "time": "2019-11-07T12:44:51+00:00"
         },
         {
             "name": "symfony/maker-bundle",

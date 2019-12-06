@@ -19,32 +19,21 @@ class ColorRepository extends ServiceEntityRepository
         parent::__construct($registry, Color::class);
     }
 
-    // /**
-    //  * @return Color[] Returns an array of Color objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Color[] Returns an array of Color objects
+     */    
+    public function findFirstId()
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+        $result = $this->createQueryBuilder('c')
             ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult()
         ;
+        if(count($result) > 0) {
+            return $result[0]->getId();
+        }
+        return 0;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Color
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

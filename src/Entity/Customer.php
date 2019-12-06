@@ -30,7 +30,7 @@ class Customer implements UserInterface
 
     /**
      * @Groups({"user:read", "user:write"})
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=180)
      * @Assert\NotBlank
      * @Assert\Email(
      *     message = "Wrong value for the given mail address"
@@ -60,9 +60,6 @@ class Customer implements UserInterface
     /**
      * @Groups({"user:read", "user:write"})
      * @ORM\Column(type="datetime", nullable=true)
-     * @Assert\DateTime(
-     *     message = "Wrong value for the given birthday date. Only datetime formats are accepted"
-     * )
      */
     private $birthday;
 
