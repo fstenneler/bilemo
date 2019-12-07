@@ -40,6 +40,11 @@ class Media
      */
     private $product;
 
+    public function __toString()
+    {
+        return (string) $this->url;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -140,6 +140,11 @@ class CustomerAddress
      */
     private $customerId;
 
+    public function __toString()
+    {
+        return (string) '[' . $this->id . '] ' . $this->firstName . ' ' . $this->lastName;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -92,6 +92,11 @@ class Customer implements UserInterface
      */
     private $user;
 
+    public function __toString()
+    {
+        return (string) $this->email;
+    }
+
     public function __construct()
     {
         $this->customerAddresses = new ArrayCollection();
