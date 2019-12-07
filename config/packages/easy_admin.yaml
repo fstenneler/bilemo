@@ -56,5 +56,9 @@ easy_admin:
             class: App\Entity\Media
         Customer:
             class: App\Entity\Customer
+            list:
+                filters: [{ property: 'user' }]
         CustomerAddress:
             class: App\Entity\CustomerAddress
+            list:
+                filters: [{ property: 'customer' }]
