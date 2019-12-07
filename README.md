@@ -97,5 +97,14 @@ An admin user was created :
     
 Please edit this user after your first connection with a new password.
 
-#### Api
-Route do access to API documentation : /api
+#### API documentation
+Route do access to the API documentation : /api
+
+#### API routes
+- /api/products
+- /api/brands
+- /api/categories
+- /api/colors
+- /api/media
+- /api/customers
+- /api/customer_addresses
