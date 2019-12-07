@@ -24,8 +24,7 @@ easy_admin:
                     - { property: 'rolesToString', label: 'Roles', type: 'text' }
                     - { property: 'company', type: 'text' }
                     - { property: 'manager_name', type: 'text' }
-                    - { property: 'manager_email', type: 'email' }
-                    - { property: 'manager_phone', type: 'tel' }
+                    - { property: 'customers' }
             form:
                 fields:
                     - { property: 'username', type: 'text' }
@@ -35,6 +34,7 @@ easy_admin:
                     - { property: 'manager_name', type: 'text' }
                     - { property: 'manager_email', type: 'email' }
                     - { property: 'manager_phone', type: 'tel' }
+                    - { property: 'customers' }
         Product:
             class: App\Entity\Product
         Brand:
