@@ -1,0 +1,64 @@
+easy_admin:
+
+    site_name: 'Bilemo API backoffice'
+
+    design:
+        menu:
+            - label: 'Users'
+              icon: 'users'
+              children: ['User']
+            - label: 'Products'
+              children: ['Product', 'Brand', 'Category', 'Color', 'Media']
+            - label: 'Customers'
+              children: ['Customer', 'CustomerAddress']
+
+    entities:
+        User:
+            class: App\Entity\User
+            controller: App\Controller\UserController
+            label: 'App user'
+            list:
+                fields:
+                    - { property: 'id', type: 'int' }
+                    - { property: 'username', type: 'text' }
+                    - { property: 'rolesToString', label: 'Roles', type: 'text' }
+                    - { property: 'company', type: 'text' }
+                    - { property: 'manager_name', type: 'text' }
+                    - { property: 'customers' }
+            form:
+                fields:
+                    - { property: 'username', type: 'text' }
+                    - { property: 'password', type: 'password' }
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER','ROLE_ADMIN': 'ROLE_ADMIN' } } }
+                    - { property: 'company', type: 'text' }
+                    - { property: 'manager_name', type: 'text' }
+                    - { property: 'manager_email', type: 'email' }
+                    - { property: 'manager_phone', type: 'tel' }
+                    - { property: 'customers' }
+        Product:
+            class: App\Entity\Product
+        Brand:
+            class: App\Entity\Brand
+            list:
+                fields:
+                    - { property: 'id', type: 'int' }
+                    - { property: 'name', type: 'string' }
+                    - { property: 'logo', type: 'file' }
+            form:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'logo', type: 'file_upload', download_path: 'public/gallery/brands/' }
+        Category:
+            class: App\Entity\Category
+        Color:
+            class: App\Entity\Color
+        Media:
+            class: App\Entity\Media
+        Customer:
+            class: App\Entity\Customer
+            list:
+                filters: [{ property: 'user' }]
+        CustomerAddress:
+            class: App\Entity\CustomerAddress
+            list:
+                filters: [{ property: 'customer' }]

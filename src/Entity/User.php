@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -53,6 +55,21 @@ class User implements UserInterface
      */
     private $managerPhone;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Customer", mappedBy="user", orphanRemoval=true)
+     */
+    private $customers;
+
+    public function __construct()
+    {
+        $this->customers = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->username;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -81,8 +98,6 @@ class User implements UserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -92,6 +107,11 @@ class User implements UserInterface
         $this->roles = $roles;
 
         return $this;
+    }
+
+    public function rolesToString(): string
+    {
+        return implode(", ", $this->roles);;
     }
 
     /**
@@ -171,6 +191,37 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
+    }
+
+    /**
+     * @return Collection|Customer[]
+     */
+    public function getCustomers(): Collection
+    {
+        return $this->customers;
+    }
+
+    public function addCustomer(Customer $customer): self
+    {
+        if (!$this->customers->contains($customer)) {
+            $this->customers[] = $customer;
+            $customer->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCustomer(Customer $customer): self
+    {
+        if ($this->customers->contains($customer)) {
+            $this->customers->removeElement($customer);
+            // set the owning side to null (unless already changed)
+            if ($customer->getUser() === $this) {
+                $customer->setUser(null);
+            }
+        }
+
+        return $this;
     }
     
 }

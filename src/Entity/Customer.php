@@ -87,10 +87,15 @@ class Customer implements UserInterface
     private $customerAddresses;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="customers")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    public function __toString()
+    {
+        return (string) $this->email;
+    }
 
     public function __construct()
     {
@@ -211,18 +216,6 @@ class Customer implements UserInterface
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
     /**
      * @see UserInterface
      */
@@ -237,6 +230,18 @@ class Customer implements UserInterface
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
 }
