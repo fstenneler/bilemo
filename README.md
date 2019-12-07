@@ -1,4 +1,4 @@
-# Bilemo
+# BileMo API
 ## API Rest for the Bilemo phones based on the API Plaform bundle
 
 Online version [here](http://bilemo.orlinstreet.rocks).
@@ -19,6 +19,7 @@ For more informations about API Platform, check the official documentation [here
 - Pagination
 - HTTP Cache management
 - Backoffice to manage users, products and customers
+- Token expiration
 
 ## Setup instructions
 
@@ -96,6 +97,28 @@ An admin user was created :
     Password : admin
     
 Please edit this user after your first connection with a new password.
+
+#### Edit user accounts
+All created demo users have their password set to "user".
+Erase these fake accounts and create your own accounts by using the backoffice.
+
+#### Connecting the API
+
+##### Generate a token
+Make a POST request to the route /authentication_token with user credentials :
+
+    {
+    "username": "jasen42",
+    "password": "user"
+    }
+
+##### Make your API requests
+Use the generated token to make your requests, by placing it in the request header :
+    
+    'headers' => [
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer #YourToken#'
+    ]
 
 #### API documentation
 Route do access to the API documentation : /api
