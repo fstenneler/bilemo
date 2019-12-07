@@ -35,9 +35,6 @@ api_platform:
         ApiPlatform\Core\Exception\FilterValidationException: 400
         Doctrine\ORM\OptimisticLockException: 409
     http_cache:
-        invalidation:
-            enabled: true
-            varnish_urls: ['%env(VARNISH_URL)%']
         max_age: 0
         shared_max_age: 3600
         vary: ['Content-Type', 'Authorization', 'Origin']
