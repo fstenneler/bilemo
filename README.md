@@ -11,7 +11,7 @@ For more informations about API Platform, check the official documentation [here
 [![SymfonyInsight](https://insight.symfony.com/projects/a0f0055c-9247-4db5-8c55-11a5fd3badaa/big.svg)](https://insight.symfony.com/projects/a0f0055c-9247-4db5-8c55-11a5fd3badaa)
 
 ### Codacy
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2c03f2f71994d3a9689143e48c8b17b)](https://www.codacy.com/manual/fstenneler/snowtricks?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fstenneler/snowtricks&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/18cb4ae222854aad885a3e44d49ac8c9)](https://www.codacy.com/manual/fstenneler/bilemo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fstenneler/bilemo&amp;utm_campaign=Badge_Grade)
 
 ## Main features
 - JWT Authentication
