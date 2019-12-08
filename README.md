@@ -8,7 +8,7 @@ For more informations about API Platform, check the official documentation [here
 ## Certifications
 
 ### Symfony Insights
-[![SymfonyInsight](https://insight.symfony.com/projects/af37613e-6fa3-4203-9ebd-ae9978c0b14d/big.svg)](https://insight.symfony.com/projects/af37613e-6fa3-4203-9ebd-ae9978c0b14d)
+[![SymfonyInsight](https://insight.symfony.com/projects/a0f0055c-9247-4db5-8c55-11a5fd3badaa/big.svg)](https://insight.symfony.com/projects/a0f0055c-9247-4db5-8c55-11a5fd3badaa)
 
 ### Codacy
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2c03f2f71994d3a9689143e48c8b17b)](https://www.codacy.com/manual/fstenneler/snowtricks?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fstenneler/snowtricks&amp;utm_campaign=Badge_Grade)
@@ -108,8 +108,8 @@ Erase these fake accounts and create your own accounts by using the backoffice.
 Make a POST request to the route /authentication_token with user credentials :
 
     {
-    "username": "jasen42",
-    "password": "user"
+        "username": "jasen42",
+        "password": "user"
     }
 
 ##### Make your API requests
