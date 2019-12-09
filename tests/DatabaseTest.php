@@ -41,6 +41,10 @@ class DatabaseTest extends WebTestCase
         ]);
     }
 
+    /**
+     * Test all tables, entities and repositories
+     *
+     */
     public function testFixtures()
     {
 

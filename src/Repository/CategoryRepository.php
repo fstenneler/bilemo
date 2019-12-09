@@ -20,8 +20,10 @@ class CategoryRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Category[] Returns an array of Category objects
-     */    
+     * Returns the id of the first item
+     *
+     * @return int
+     */
     public function findFirstId()
     {
         $result = $this->createQueryBuilder('c')

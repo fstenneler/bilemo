@@ -14,7 +14,7 @@ class UserController extends EasyAdminController
     private $passwordEncoder;
 
     /**
-     * UserController constructor.
+     * UserController constructor for Easy Admin user management
      *
      * @param UserPasswordEncoderInterface $passwordEncoder
      */

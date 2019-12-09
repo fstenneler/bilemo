@@ -8,6 +8,9 @@ use ApiPlatform\Core\DataPersister\DataPersisterInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
+/**
+ * API Platfom extention
+ */
 class CustomerDataPersister implements DataPersisterInterface
 {
     private $entityManager;
@@ -21,11 +24,24 @@ class CustomerDataPersister implements DataPersisterInterface
         $this->passwordEncoder = $passwordEncoder;
     }
 
+    /**
+     * Operation supported for given data
+     *
+     * @param Customer $data
+     * @return boolean
+     */
     public function supports($data): bool
     {
         return $data instanceof Customer;
     }
 
+    /**
+     * POST or PUT customer
+     * The user is given by the API auth token
+     *
+     * @param Customer $customer
+     * @return void
+     */
     public function persist($customer)
     {
 
@@ -44,6 +60,12 @@ class CustomerDataPersister implements DataPersisterInterface
 
     }
 
+    /**
+     * DELETE customer
+     *
+     * @param Customer $customer
+     * @return void
+     */
     public function remove($customer)
     {
         $this->entityManager->remove($customer);

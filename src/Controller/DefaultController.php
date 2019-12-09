@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DefaultController extends AbstractController
 {
     /**
+     * Access to the root of the project redirects to / api.
+     * 
      * @Route("/", name="app_home")
      */
     public function home(): RedirectResponse

@@ -20,8 +20,11 @@ class UserRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return User[] Returns an array of User objects
-     */    
+     * Returns the User object of the first item found with the role given
+     *
+     * @param string $role A string for the role to find
+     * @return User
+     */
     public function findFirstBy($role)
     {
         $result = $this->createQueryBuilder('u')
@@ -36,8 +39,12 @@ class UserRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return User[] Returns an array of User objects
-     */    
+     * Returns the User object of a user having the given role, excepted the given userId
+     *
+     * @param [type] $role A string for the role to find
+     * @param [type] $userId An integer to identify the user not to find
+     * @return User
+     */
     public function findAnotherOne($role, $userId)
     {
         $result = $this->createQueryBuilder('u')

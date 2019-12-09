@@ -20,8 +20,10 @@ class ColorRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Color[] Returns an array of Color objects
-     */    
+     * Returns the id of the first item
+     *
+     * @return int
+     */
     public function findFirstId()
     {
         $result = $this->createQueryBuilder('c')

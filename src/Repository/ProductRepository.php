@@ -20,8 +20,10 @@ class ProductRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Product[] Returns an array of Product objects
-     */    
+     * Returns the id of the first item
+     *
+     * @return int
+     */
     public function findFirstId()
     {
         $result = $this->createQueryBuilder('p')

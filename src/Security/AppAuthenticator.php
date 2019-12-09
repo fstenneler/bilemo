@@ -19,6 +19,10 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
+/**
+ * App authentication
+ * Used to connect users to backoffice
+ */
 class AppAuthenticator extends AbstractFormLoginAuthenticator
 {
     use TargetPathTrait;
@@ -36,12 +40,24 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator
         $this->passwordEncoder = $passwordEncoder;
     }
 
+    /**
+     * Test if method is supported
+     *
+     * @param Request $request
+     * @return bool
+     */
     public function supports(Request $request)
     {
         return 'app_login' === $request->attributes->get('_route')
             && $request->isMethod('POST');
     }
 
+    /**
+     * Get credentials from the given request
+     *
+     * @param Request $request
+     * @return array
+     */
     public function getCredentials(Request $request)
     {
         $credentials = [
@@ -57,6 +73,13 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator
         return $credentials;
     }
 
+    /**
+     * Get the user by credentials
+     *
+     * @param array $credentials
+     * @param UserProviderInterface $userProvider
+     * @return UserInterface
+     */
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
         $token = new CsrfToken('authenticate', $credentials['csrf_token']);
@@ -78,11 +101,26 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator
         return $user;
     }
 
+    /**
+     * Test if the given password is valid
+     *
+     * @param array $credentials
+     * @param UserInterface $user
+     * @return bool
+     */
     public function checkCredentials($credentials, UserInterface $user)
     {
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
     }
 
+    /**
+     * On success redirect to backoffice dashboard
+     *
+     * @param Request $request
+     * @param TokenInterface $token
+     * @param $providerKey
+     * @return RedirectResponse
+     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
@@ -92,6 +130,11 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator
         return new RedirectResponse('/backoffice');
     }
 
+    /**
+     * Get the url for the route app_login
+     *
+     * @return string
+     */
     protected function getLoginUrl()
     {
         return $this->urlGenerator->generate('app_login');

@@ -20,8 +20,11 @@ class CustomerRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Customer[] Returns an array of Customer objects
-     */    
+     * Returns the first id for the given user
+     *
+     * @param User $user
+     * @return int
+     */
     public function findFirstIdBy($user)
     {
         $result = $this->createQueryBuilder('c')
@@ -39,8 +42,12 @@ class CustomerRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Customer[] Returns an array of Customer objects
-     */    
+     * Returns an array of ids for the given user with fixed maxResults
+     *
+     * @param [User] $user
+     * @param [int] $maxResults
+     * @return array
+     */
     public function findIdByUser($user, $maxResults)
     {
         $result = $this->createQueryBuilder('c')

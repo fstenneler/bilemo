@@ -20,8 +20,10 @@ class MediaRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Media[] Returns an array of Media objects
-     */    
+     * Returns the id of the first item
+     *
+     * @return int
+     */
     public function findFirstId()
     {
         $result = $this->createQueryBuilder('m')

@@ -20,8 +20,11 @@ class CustomerAddressRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return CustomerAddress[] Returns an array of CustomerAddress objects
-     */    
+     * Returns the id of the first item found with the given user
+     *
+     * @param User $user
+     * @return int
+     */
     public function findFirstIdBy($user)
     {
         $result = $this->createQueryBuilder('ca')

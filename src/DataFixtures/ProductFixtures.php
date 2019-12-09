@@ -14,7 +14,7 @@ class ProductFixtures extends Fixture
 {
 
     /**
-     * Load fixtures in a certain order
+     * Load product fixtures in a certain order
      *
      * @param ObjectManager $manager
      * @return void
@@ -94,7 +94,7 @@ class ProductFixtures extends Fixture
     }
 
     /**
-     * Load tricks from Yaml data file and store into database
+     * Load products from Yaml data file and store into database
      *
      * @param ObjectManager $manager
      * @param string $dataPath

@@ -10,6 +10,9 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * API Plaform extension
+ */
 class CustomerAddressDataPersister implements DataPersisterInterface
 {
     private $entityManager;
@@ -21,11 +24,23 @@ class CustomerAddressDataPersister implements DataPersisterInterface
         $this->tokenStorage = $tokenStorage;
     }
 
+    /**
+     * Operation supported for given data
+     *
+     * @param CustomerAddress $data
+     * @return boolean
+     */
     public function supports($data): bool
     {
         return $data instanceof CustomerAddress;
     }
 
+    /**
+     * POST or PUT customer address
+     *
+     * @param CustomerAddress $customerAddress
+     * @return void
+     */
     public function persist($customerAddress)
     {
 
@@ -53,6 +68,12 @@ class CustomerAddressDataPersister implements DataPersisterInterface
 
     }
     
+    /**
+     * DELETE customer address
+     *
+     * @param CustomerAddress $customerAddress
+     * @return void
+     */
     public function remove($customerAddress)
     {
         $this->entityManager->remove($customerAddress);

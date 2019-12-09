@@ -20,7 +20,7 @@ class UserFixtures extends Fixture
     }
 
     /**
-     * Load fixtures in a certain order
+     * Load user fixtures in a certain order
      *
      * @param ObjectManager $manager
      * @return void

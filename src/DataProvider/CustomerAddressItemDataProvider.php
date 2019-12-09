@@ -10,6 +10,9 @@ use ApiPlatform\Core\DataProvider\RestrictedDataProviderInterface;
 use ApiPlatform\Core\Exception\ResourceClassNotSupportedException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
+/**
+ * API Platform extension
+ */
 final class CustomerAddressItemDataProvider implements ItemDataProviderInterface, RestrictedDataProviderInterface
 {
     protected $entityManager;
@@ -21,11 +24,29 @@ final class CustomerAddressItemDataProvider implements ItemDataProviderInterface
         $this->tokenStorage = $tokenStorage;
     }
 
+    /**
+     * Test if operation is supported
+     *
+     * @param string $resourceClass
+     * @param string $operationName
+     * @param array $context
+     * @return boolean
+     */
     public function supports(string $resourceClass, string $operationName = null, array $context = []): bool
     {
         return CustomerAddress::class === $resourceClass;
     }
 
+    /**
+     * Find the customer address by the given id
+     * Only possible if the user connected by auth token owns the customer
+     *
+     * @param string $resourceClass
+     * @param [type] $id
+     * @param string $operationName
+     * @param array $context
+     * @return CustomerAddress|null
+     */
     public function getItem(string $resourceClass, $id, string $operationName = null, array $context = []): ?CustomerAddress
     {
 

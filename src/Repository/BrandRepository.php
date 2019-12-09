@@ -20,8 +20,10 @@ class BrandRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Brand[] Returns an array of Brand objects
-     */    
+     * Returns the id of the first item
+     *
+     * @return int
+     */
     public function findFirstId()
     {
         $result = $this->createQueryBuilder('b')

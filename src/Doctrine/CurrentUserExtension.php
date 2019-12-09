@@ -9,6 +9,10 @@ use App\Entity\Customer;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\Security\Core\Security;
 
+/**
+ * API Platform doctrine extension
+ * Used to get only customer and customer addresses for the user connected by the auth token
+ */
 final class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryItemExtensionInterface
 {
     private $security;
