@@ -17,7 +17,12 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>tests</directory>
+            <file>tests/DatabaseTest.php</file>
+            <file>tests/AuthenticationTest.php</file>
+            <file>tests/RouteTest.php</file>
+            <file>tests/OwnerAccessTest.php</file>
+            <file>tests/OperationAccessTest.php</file>
+            <file>tests/OperationTest.php</file>
         </testsuite>
     </testsuites>
 
