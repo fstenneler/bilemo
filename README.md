@@ -8,7 +8,7 @@ For more informations about API Platform, check the official documentation [here
 ## Certifications
 
 ### Symfony Insights
-[![SymfonyInsight](https://insight.symfony.com/projects/a0f0055c-9247-4db5-8c55-11a5fd3badaa/big.svg)](https://insight.symfony.com/projects/a0f0055c-9247-4db5-8c55-11a5fd3badaa)
+[![SymfonyInsight](http://bilemo.orlinstreet.rocks/images/symfony_insight_badge.svg)](http://bilemo.orlinstreet.rocks/images/symfony_insights.jpg)
 
 ### Codacy
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/18cb4ae222854aad885a3e44d49ac8c9)](https://www.codacy.com/manual/fstenneler/bilemo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fstenneler/bilemo&amp;utm_campaign=Badge_Grade)
